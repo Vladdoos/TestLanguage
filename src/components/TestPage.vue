@@ -1,18 +1,13 @@
 <template>
 <div class="testPage">
-  <p :title="date | dateNow">555</p>
-  <p style="width: 100%">Девушка: {{fullName}}</p>
-  <div class="block-enter">
-    <a @click.left="newMessage = 'left'" @click.right="newMessage = 'right'" @click.middle="newMessage = 'middle'">Ссылка</a>
-    <p>{{newMessage}}</p>
+  <form v-if="show" name="mainForm">
 
-  </div>
+    <form name="subForm">
+      <p>hihihi</p>
+    </form>
 
-  <input name="radio" type="radio" v-model="type" value="один">
-  <input name="radio" type="radio" v-model="type" value="два">
-  <input name="radio" type="radio" v-model="type" value="три">
-  <p>Вы выбрали: {{ type }}</p>
-
+  </form>
+<div else></div>
 
   <router-link class="link" :to="{name: 'pageNavigation'}">Страница навигации</router-link>
 </div>
