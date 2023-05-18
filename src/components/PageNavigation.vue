@@ -9,6 +9,7 @@
     <router-link class="link" :to="{name: 'pageTests'}">Тесты</router-link>
     <router-link class="link" :to="{name: 'pageTestsRadio'}">Тесты с радиокнопками </router-link>
     <router-link class="link" :to="{name: 'pageTestsQuestionnaire'}">Опросник</router-link>
+    <router-link class="link" :to="{name: 'todoList'}">приложение Список задач</router-link>
     <router-link class="link" :to="{name: 'testPage'}">Тестовая страница </router-link>
 
   </div>

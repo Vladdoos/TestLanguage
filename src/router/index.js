@@ -10,6 +10,7 @@ import pageNotebook from "../components/PageNotebook";
 import pageTests from "../components/PagesTests/PageTests";
 import pageTestsRadio from '../components/PagesTests/PageTestsRadio'
 import pageTestsQuestionnaire from "../components/PagesTests/PageTestsQuestionnaire";
+import todoList from "../components/unitComponents/todoList";
 
 Vue.use(Router);
 
@@ -66,6 +67,11 @@ let router = new Router({
       name: 'pageTestsQuestionnaire',
       component: pageTestsQuestionnaire
     },
+    {
+      path: '/todoList',
+      name: 'todoList',
+      component: todoList
+    }
 
   ]
 })

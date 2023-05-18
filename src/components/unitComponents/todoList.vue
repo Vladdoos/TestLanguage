@@ -24,17 +24,15 @@
     </div>
 
 
-      <router-link class="link" :to="{name: 'pageNavigation'}">Страница навигации</router-link>
+    <router-link class="link" :to="{name: 'pageNavigation'}">Страница навигации</router-link>
   </div>
 
 
 </template>
 
 <script>
-import testFiles from '../components/TestFileTutorial'
-
 export default {
-  name: "TestPage",
+  name: "todoList",
   data () {
     return {
       innerData: {
@@ -46,6 +44,7 @@ export default {
     }
   },
   methods: {
+    // Добавление новой задачи
     todo() {
       if(this.value) {
         this.innerData.zadachi.push({id:this.innerData.zadachi.length + 1, text:this.value, active: false })
@@ -54,15 +53,17 @@ export default {
       }
       else this.showValidation = true
     },
+    // Удаление элемента из списка задач;
     remove(i) {
       this.innerData.zadachi.splice(i, 1)
     },
-
+    // Получение значения фильтра
     getFilter(filter) {
       this.innerData.activeFilter = filter
     }
   },
   computed:{
+    // Фильтрация задач по статусу
     setFilter () {
       let filter = this.innerData.activeFilter;
       return this.innerData.zadachi.filter(function (elem) {
@@ -74,6 +75,7 @@ export default {
     }
   },
   created() {
+    //Получение задач из удалённого хранилища при инициализации приложения
     fetch("https://my-json-server.typicode.com/falk20/demo/todos")
       .then(response => response.json())
       .then(data => {return this.innerData.zadachi = data});
